@@ -1,0 +1,32 @@
+{
+    "name": "elephantsgroup/eg-base",
+    "description": "Yii2 elephantsGroup base library",
+    "keywords": ["yii", "yii2", "extension", "elephantsGroup"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elephants Group",
+            "website": "elephantsgroup.com",
+            "email": "elephantsgroup@outlook.com"
+        },
+        {
+            "name": "Jalal Jaberi",
+            "email": "proodoo@gmail.com"
+        },
+        {
+            "name": "Arezou Zahedi Majd",
+            "email": "arezoumajd@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "config": {
+        "process-timeout": 1500,
+        "secure-http": false
+    },
+    "autoload": {
+        "psr-4": { "elephantsGroup\\base\\": "" }
+    }
+}
