@@ -13,7 +13,6 @@ namespace elephantsGroup\base;
 use Yii;
 use yii\web;
 use elephantsGroup\base\Module;
-use elephantsGroup\stat\traits;
 
 class EGController extends \yii\web\Controller
 {
