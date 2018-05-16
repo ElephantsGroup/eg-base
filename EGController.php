@@ -13,6 +13,7 @@ namespace elephantsGroup\base;
 use Yii;
 use yii\web;
 use elephantsGroup\base\Module;
+use elephantsGroup\stat\traits;
 
 class EGController extends \yii\web\Controller
 {
@@ -63,5 +64,15 @@ class EGController extends \yii\web\Controller
 		if(!isSetOption($key))
 			throw Exception('Unexpected $key for EGController getOption function');
 		return $this->options[$key];
+	}
+
+	public function beforeAction($action)
+	{
+		if (in_array('elephantsGroup\stat\traits\StatTrait', class_uses($this)))
+			$this->log();
+		if (!parent::beforeAction($action)) {
+			return false;
+		}
+		return true;
 	}
 }
