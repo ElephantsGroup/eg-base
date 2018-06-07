@@ -69,9 +69,6 @@ class EGController extends \yii\web\Controller
 	{
 		if (in_array('elephantsGroup\stat\traits\StatTrait', class_uses($this)))
 			$this->log();
-		if (!parent::beforeAction($action)) {
-			return false;
-		}
-		return true;
+		return !parent::beforeAction($action);
 	}
 }
