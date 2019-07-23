@@ -21,6 +21,10 @@ class EGController extends \yii\web\Controller
 	protected $language_urls = [];
 	protected $options = [];
 
+	public $description = "ElephantsGroup EGCMS Platform";
+	public $keywords = array('ElephantsGroup', 'egcms', 'پلتفرم EGCMS');
+	public $title = "ElephantsGroup EGCMS Platform";
+	
     public function bindActionParams($action, $params)
 	{
         $module = \Yii::$app->getModule('base');
@@ -35,14 +39,14 @@ class EGController extends \yii\web\Controller
 
         return parent::bindActionParams($action, $params);
 	}
-	
+
 	public function addLanguageUrl($lang, $url, $active = false)
 	{
 		if(!isset($url) || $url == '')
 			 $url = Yii::getAlias('@web');
 		$this->language_urls[$lang] = ['url'=>$url, 'active'=>$active];
 	}
-	
+
 	public function getLanguageUrls()
 	{
 		return $this->language_urls;
@@ -52,12 +56,12 @@ class EGController extends \yii\web\Controller
 	{
 		$this->options[$key] = $value;
 	}
-	
+
 	public function isSetOption($key)
 	{
 		return isset($this->options[$key]);
 	}
-	
+
 	public function getOption($key)
 	{
 		if(!isSetOption($key))
